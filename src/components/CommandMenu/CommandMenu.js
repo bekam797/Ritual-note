@@ -44,7 +44,6 @@ const CommandMenu = ({
 
   const handleAddMenuItem = (item) => {
     editor.deleteBackward("character");
-    // editor.insertBreak();
     Transforms.insertNodes(editor, [item]);
 
     setIsCommandMenuOpen(false);
@@ -69,7 +68,6 @@ const CommandMenu = ({
         <div className="Items">
           {items.map((item, key) => {
             return (
-              // eslint-disable-next-line jsx-a11y/click-events-have-key-events
               <div
                 key={key}
                 role="button"

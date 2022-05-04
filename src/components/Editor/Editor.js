@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { Slate, Editable } from "slate-react";
-import useEditorConfig from "../../hooks/EditorConfig";
+import useEditorConfig from "../../hooks/useEditorConfig";
 import useCommandMenu from "../../hooks/useCommandMenu";
 import CommandMenu from "../CommandMenu/CommandMenu";
 import Element from "../Element/Element";

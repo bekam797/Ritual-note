@@ -7,18 +7,21 @@ const TodoItem = (props) => {
   const { attributes, children, element } = props;
   const { checked } = element;
 
+  const handleOnChange = (event) => {
+    const newProperties = {
+      checked: event.target.checked,
+    };
+    Transforms.setNodes(editor, newProperties);
+  }
+
   return (
     <div {...attributes}>
       <span contentEditable={false} className="mr-3">
         <input
           type="checkbox"
           checked={checked}
-          onChange={(event) => {
-            const newProperties = {
-              checked: event.target.checked,
-            };
-            Transforms.setNodes(editor, newProperties);
-          }}
+          onChange={(event) => handleOnChange(event)}
+          style={{ marginRight: 10 }}
         />
       </span>
       <span

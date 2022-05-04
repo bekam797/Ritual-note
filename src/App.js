@@ -1,15 +1,16 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { createEditor } from "slate";
 import { withReact } from "slate-react";
 import Editor from "./components/Editor/Editor";
 import InitialValue from "./utils/InitialValue";
 
 import "./App.css";
+import withKeyCommands from './plugins/withKeyCommands'
 
 const App = () => {
-  const editor = useMemo(() => withReact(createEditor()), []);
+  const [editor] = useState(withKeyCommands(withReact(createEditor())));
   const [inputValue, setInputValue] = useState("Untitled");
-  const [value, updateValue] = useState(InitialValue);
+  const [value, setValue] = useState(InitialValue);
   const [cursorPosition, setCursorPosition] = useState(null);
 
   useEffect(() => {
@@ -30,7 +31,7 @@ const App = () => {
       <Editor
         editor={editor}
         value={value}
-        onChange={updateValue}
+        onChange={setValue}
         cursorPosition={cursorPosition}
       />
     </div>
