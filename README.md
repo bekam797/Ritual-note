@@ -1,13 +1,16 @@
-# Getting Started with Create React App
+# Hello Ritual Team hope you'll enjoy this code
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Node version 16++
 
-## Available Scripts
+### In the project directory, you can run:
 
-In the project directory, you can run:
+```sh
+npm install || yarn
+npm start || yarn start
+```
+Used packages.
+- slatejs
+- slate-react
 
-## `npm install`
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Why SlateJs
+Slate.js makes serialization to HTML, Markdown, and other formats possible. Simple tasks like converting a document to HTML or Markdown is made a lot easier with less boilerplate code.

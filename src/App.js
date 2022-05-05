@@ -3,9 +3,9 @@ import { createEditor } from "slate";
 import { withReact } from "slate-react";
 import Editor from "./components/Editor/Editor";
 import InitialValue from "./utils/InitialValue";
+import withKeyCommands from './plugins/withKeyCommands'
 
 import "./App.css";
-import withKeyCommands from './plugins/withKeyCommands'
 
 const App = () => {
   const [editor] = useState(withKeyCommands(withReact(createEditor())));
