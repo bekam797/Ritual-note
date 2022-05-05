@@ -1,18 +1,8 @@
-import React from "react";
-import { Transforms } from "slate";
-import { useSlateStatic } from "slate-react";
+import React, { useState } from "react";
 
 const TodoItem = (props) => {
-  const editor = useSlateStatic();
-  const { attributes, children, element } = props;
-  const { checked } = element;
-
-  const handleOnChange = (event) => {
-    const newProperties = {
-      checked: event.target.checked,
-    };
-    Transforms.setNodes(editor, newProperties);
-  }
+  const [checked, setChecked] = useState(false);
+  const { attributes, children } = props;
 
   return (
     <div {...attributes}>
@@ -20,7 +10,7 @@ const TodoItem = (props) => {
         <input
           type="checkbox"
           checked={checked}
-          onChange={(event) => handleOnChange(event)}
+          onChange={(event) => setChecked(event.target.checked)}
           style={{ marginRight: 10 }}
         />
       </span>
